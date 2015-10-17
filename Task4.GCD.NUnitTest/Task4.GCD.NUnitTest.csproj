@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{46ECCDC3-DA05-47D7-9972-7EC73CD9342C}</ProjectGuid>
+    <ProjectGuid>{92C39A05-E67C-4F62-8E36-AC64409A1934}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task3.IntegerToHexString.NUnitTest</RootNamespace>
-    <AssemblyName>Task3.IntegerToHexString.NUnitTest</AssemblyName>
+    <RootNamespace>Task4.GCD.NUnitTest</RootNamespace>
+    <AssemblyName>Task4.GCD.NUnitTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -60,16 +60,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HexFormatProviderTest.cs" />
+    <Compile Include="GCDTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Task3.IntegerToHexString\Task3.IntegerToHexString.csproj">
-      <Project>{b19ee4db-9a28-4f06-a0f6-b5741a844e81}</Project>
-      <Name>Task3.IntegerToHexString</Name>
+    <ProjectReference Include="..\Task4.GCD\Task4.GCD.csproj">
+      <Project>{2b352f29-3473-4261-95f7-59e7e07999e9}</Project>
+      <Name>Task4.GCD</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
