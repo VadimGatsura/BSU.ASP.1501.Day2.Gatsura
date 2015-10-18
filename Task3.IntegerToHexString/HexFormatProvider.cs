@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace Task3.IntegerToHexString {
     public class HexFormatProvider : IFormatProvider, ICustomFormatter {
@@ -18,12 +19,12 @@ namespace Task3.IntegerToHexString {
         #endregion
 
         #region Public Methods
-        public object GetFormat(Type formatType) => formatType == typeof (ICustomFormatter) ? this : null;
+        public object GetFormat(Type formatType) => formatType == typeof (ICustomFormatter) ? this : Thread.CurrentThread.CurrentCulture.GetFormat(formatType);
         
 
         public string Format(string format, object arg, IFormatProvider formatProvider) {
             if (arg == null || format != "H")
-                return string.Format(m_ParentProvider, "{0:" + format + "}", arg);
+                return string.Format(m_ParentProvider, $"{{0:{format}}}", arg);
 
             StringBuilder result = new StringBuilder();
 
