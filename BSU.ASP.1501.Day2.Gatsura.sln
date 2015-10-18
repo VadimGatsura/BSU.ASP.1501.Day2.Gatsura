@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4.GCD", "Task4.GCD\Task
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4.GCD.NUnitTest", "Task4.GCD.NUnitTest\Task4.GCD.NUnitTest.csproj", "{92C39A05-E67C-4F62-8E36-AC64409A1934}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2.CustomerFormatter", "Task2.CustomerFormatter\Task2.CustomerFormatter.csproj", "{146E5319-A4E5-45A5-86DE-BDB32C738B81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2.CustomerFormatter.NUnitTest", "Task2.CustomerFormatterTest\Task2.CustomerFormatter.NUnitTest.csproj", "{AA0F156F-5A0D-442D-AF83-C44D8ABE89A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{92C39A05-E67C-4F62-8E36-AC64409A1934}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92C39A05-E67C-4F62-8E36-AC64409A1934}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92C39A05-E67C-4F62-8E36-AC64409A1934}.Release|Any CPU.Build.0 = Release|Any CPU
+		{146E5319-A4E5-45A5-86DE-BDB32C738B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{146E5319-A4E5-45A5-86DE-BDB32C738B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{146E5319-A4E5-45A5-86DE-BDB32C738B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{146E5319-A4E5-45A5-86DE-BDB32C738B81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA0F156F-5A0D-442D-AF83-C44D8ABE89A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA0F156F-5A0D-442D-AF83-C44D8ABE89A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA0F156F-5A0D-442D-AF83-C44D8ABE89A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA0F156F-5A0D-442D-AF83-C44D8ABE89A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
