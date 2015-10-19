@@ -28,7 +28,7 @@ namespace Task2.CustomerFormatter {
                 case "C":
                     return $"Customer record: {ContactPhone}";
                 default:
-                    return string.Format(formatProvider, format, this);
+                    throw new FormatException($"The {format} format string not supported");
             }
         }
     }

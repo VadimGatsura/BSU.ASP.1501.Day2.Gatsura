@@ -20,6 +20,7 @@ namespace Task2.CustomerFormatterTest {
                 yield return new TestCaseData("R", CultureInfo.InvariantCulture).Returns($"Customer record: {m_Revenue}");
                 yield return new TestCaseData("D", CultureInfo.InvariantCulture).Returns($"Customer record: {m_Customer.Name}, {m_Customer.ContactPhone}");
                 yield return new TestCaseData("", CultureInfo.InvariantCulture).Returns($"Customer record: {m_Customer.Name}, {m_Revenue}, {m_Customer.ContactPhone}");
+                yield return new TestCaseData("E", CultureInfo.InvariantCulture).Throws(typeof(FormatException));
             }
         }
 
