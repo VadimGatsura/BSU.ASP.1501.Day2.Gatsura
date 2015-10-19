@@ -25,12 +25,19 @@ namespace Task3.IntegerToHexString {
             if (arg == null || format != "H")
                 return string.Format(m_ParentProvider, $"{{0:{format}}}", arg);
 
-            StringBuilder result = new StringBuilder();
-
             if (!(arg is int) && !(arg is long)) 
                 throw new ArgumentException("Wrong argument type. Argument name: " + nameof(arg));    
 
             long number = Convert.ToInt64(arg);
+            return GetHexString(number);
+            
+        }
+        #endregion
+
+        #region Private methods
+
+        private string GetHexString(long number) {
+            StringBuilder result = new StringBuilder();
             bool needMinus = false;
             if (number < 0) {
                 number *= -1;
@@ -38,7 +45,7 @@ namespace Task3.IntegerToHexString {
             }
 
             do {
-                int ch = (int) (number%16);
+                int ch = (int)(number % 16);
                 result.Append(m_HexNumber[ch]);
                 number /= 16;
             } while (number > 0);
