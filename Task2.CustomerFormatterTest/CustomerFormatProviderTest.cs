@@ -7,6 +7,8 @@ namespace Task2.CustomerFormatterTest {
     [TestFixture]
     public class CustomerFormatProviderTest {
 
+        private static readonly Customer m_Customer = new Customer();
+
         public IEnumerable<TestCaseData> TestDatas {
             get {
                 yield return new TestCaseData(m_Customer, "Customer record: {0:N, R, C}").Returns($"Customer record: {m_Customer.Name}, {m_Customer.Revenue}, {m_Customer.ContactPhone}");
@@ -21,8 +23,7 @@ namespace Task2.CustomerFormatterTest {
                 yield return new TestCaseData(m_Customer, "Customer record: {0:B}").Throws(typeof(ArgumentException));
             }
         } 
-
-        private static readonly Customer m_Customer = new Customer();
+        
         [Test, TestCaseSource(nameof(TestDatas))]
         public string Format_Test(Customer customer, string format) {
             IFormatProvider fp = new CustomerFormatProvider();
