@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Task4.GCD {
@@ -48,11 +49,10 @@ namespace Task4.GCD {
         /// <param name="array">Array of parameters for calculating the greatest common divisor</param>
         /// <returns>The greatest common divisor</returns>
         public static long Euclidean(params long[] array) {
-            long result = 0;
-            for (int i = 0; i < array.Length; i++) {
-                result = Euclidean(result, array[i]);
-            }
-            return result;
+            if (array == null)
+                throw new ArgumentNullException(nameof(array));
+
+            return array.Aggregate<long, long>(0, Euclidean);
         }
 
         /// <summary>
@@ -62,14 +62,10 @@ namespace Task4.GCD {
         /// <param name="array">Array of parameters for calculating the greatest common divisor</param>
         /// <returns>The greatest common divisor</returns>
         public static long Euclidean(out long ticks, params long[] array) {
-            long result = 0;
-            ticks = 0;
-            long t;
-            for (int i = 0; i < array.Length; i++) {
-                result = Euclidean(result, array[i], out t);
-                ticks += t;
-            }
-            return result;
+            if (array == null)
+                throw new ArgumentNullException(nameof(array));
+
+            return Find(Euclidean, out ticks, array);
         }
         #endregion
 
@@ -130,6 +126,8 @@ namespace Task4.GCD {
         /// <param name="array">Array of parameters for calculating the greatest common divisor</param>
         /// <returns>The greatest common divisor</returns>
         public static long Stein(params long[] array) {
+            if (array == null)
+                throw new ArgumentNullException(nameof(array));
             return array.Aggregate<long, long>(0, Stein);
         }
 
@@ -140,17 +138,29 @@ namespace Task4.GCD {
         /// <param name="array">Array of parameters for calculating the greatest common divisor</param>
         /// <returns>The greatest common divisor</returns>
         public static long Stein(out long ticks, params long[] array) {
+            if (array == null)
+                throw new ArgumentNullException(nameof(array));
+            return Find(Stein, out ticks, array);
+        }
+        #endregion
+
+        #endregion
+
+        #region Private Methods
+
+        private delegate long Algorithm(long a, long b, out long ticks);
+
+        private static long Find(Algorithm find, out long ticks, params long[] array) {
             long result = 0;
             ticks = 0;
             long t;
             foreach (long element in array) {
-                result = Stein(result, element, out t);
+                result = find(result, element, out t);
                 ticks += t;
             }
             return result;
         }
         #endregion
 
-        #endregion
     }
 }

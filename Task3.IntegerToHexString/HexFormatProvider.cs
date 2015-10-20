@@ -8,8 +8,6 @@ namespace Task3.IntegerToHexString {
 
         private readonly IFormatProvider m_ParentProvider;
 
-        private static readonly string[] m_HexNumber = "0 1 2 3 4 5 6 7 8 9 A B C D E F".Split();
-
         #region Constructors
         public HexFormatProvider() : this(CultureInfo.CurrentCulture) { }
         public HexFormatProvider(IFormatProvider parent) {
@@ -20,7 +18,6 @@ namespace Task3.IntegerToHexString {
         #region Public Methods
         public object GetFormat(Type formatType) => formatType == typeof (ICustomFormatter) ? this : m_ParentProvider.GetFormat(formatType);
         
-
         public string Format(string format, object arg, IFormatProvider formatProvider) {
             if (arg == null || format != "H")
                 return string.Format(m_ParentProvider, $"{{0:{format}}}", arg);
@@ -37,6 +34,7 @@ namespace Task3.IntegerToHexString {
         #region Private methods
 
         private string GetHexString(long number) {
+            string[] hexNumbers = "0 1 2 3 4 5 6 7 8 9 A B C D E F".Split();
             StringBuilder result = new StringBuilder();
             bool needMinus = false;
             if (number < 0) {
@@ -46,7 +44,7 @@ namespace Task3.IntegerToHexString {
 
             do {
                 int ch = (int)(number % 16);
-                result.Append(m_HexNumber[ch]);
+                result.Append(hexNumbers[ch]);
                 number /= 16;
             } while (number > 0);
 

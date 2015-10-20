@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Globalization;
-using System.Text;
-using System.Text.RegularExpressions;
 
 namespace Task2.CustomerFormatter {
     public class CustomerFormatProvider : IFormatProvider, ICustomFormatter {

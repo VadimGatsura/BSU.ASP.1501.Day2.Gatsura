@@ -7,6 +7,10 @@ namespace Task2.CustomerFormatter {
         public string ContactPhone { get; private set; } = "+1 (425) 555-0100";
         public decimal Revenue { get; private set; } = 1000000;
 
+        public override string ToString() => this.ToString("G", CultureInfo.CurrentCulture);
+
+        public string ToString(string format) => this.ToString(format, CultureInfo.CurrentCulture);
+
         public string ToString(string format, IFormatProvider formatProvider) {
             if (string.IsNullOrEmpty(format))
                 format = "G";
